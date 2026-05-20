@@ -82,23 +82,5 @@
         stroke-linecap="round"
         stroke-dasharray="16 14"/>
 
-  <!-- ── COIN ── -->
-  <circle cx="752" cy="831" r="92" fill="#00C48C"/>
-  <!-- subtle inner ring on coin -->
-  <circle cx="752" cy="831" r="72" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="8"/>
-
-  <!-- ── ₦ INSIDE COIN ── -->
-  <!-- left vertical bar -->
-  <rect x="716" y="789" width="20" height="82" rx="10" fill="#003D2B"/>
-  <!-- right vertical bar -->
-  <rect x="796" y="789" width="20" height="82" rx="10" fill="#003D2B"/>
-  <!-- diagonal top-left → bottom-right -->
-  <line x1="736" y1="805" x2="796" y2="855" stroke="#003D2B" stroke-width="16" stroke-linecap="round"/>
-  <!-- diagonal bottom-left → top-right (ghost) -->
-  <line x1="736" y1="855" x2="796" y2="805" stroke="rgba(0,61,43,0.38)" stroke-width="16" stroke-linecap="round"/>
-  <!-- top horizontal rail -->
-  <rect x="706" y="821" width="122" height="18" rx="9" fill="#003D2B"/>
-  <!-- bottom horizontal rail -->
-  <rect x="706" y="851" width="122" height="18" rx="9" fill="#003D2B"/>
 
 </svg>

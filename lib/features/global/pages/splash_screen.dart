@@ -14,11 +14,43 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: AppColors.primary,
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
-          const Positioned.fill(child: _ConcentricRings()),
-          const Positioned(top: 80, right: 24, child: _DotGrid()),
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.65,
+              child: Image.asset(AppAssets.splashHero, fit: BoxFit.cover),
+            ),
+          ),
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.black.withValues(alpha: 0.35),
+                    Colors.black.withValues(alpha: 0.10),
+                    Colors.black.withValues(alpha: 0.55),
+                  ],
+                  stops: const [0.0, 0.45, 1.0],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 350.r, // ← adjust this value to move the icon up/down
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SvgPicture.asset(
+                AppAssets.appIcon,
+                width: 73.r,
+                height: 73.r,
+              ),
+            ),
+          ),
           SafeArea(
             child: Column(
               children: [
@@ -27,31 +59,7 @@ class SplashScreen extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        SvgPicture.asset(
-                          AppAssets.appIcon,
-                          width: 84.r,
-                          height: 84.r,
-                        ),
-                        SizedBox(height: 20.r),
-                        // Text(
-                        //   'SmartMoves',
-                        //   style: GoogleFonts.syne(
-                        //     fontSize: 20,
-                        //     fontWeight: FontWeight.w800,
-                        //     color: Colors.white,
-                        //     letterSpacing: -0.5,
-                        //     height: 1.2,
-                        //   ),
-                        // ),
-                        // Text(
-                        //   'SmartMoves',
-                        //   style: GoogleFonts.syne(
-                        //     fontSize: 32,
-                        //     fontWeight: FontWeight.w700,
-                        //     color: Colors.white,
-                        //     letterSpacing: -2,
-                        //   ),
-                        // ),
+                        SizedBox(height: 84.r + 52.r),
                         Transform.scale(
                           scaleX: 0.7,
                           scaleY: 1.4,
@@ -66,24 +74,7 @@ class SplashScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // const Text(
-                        //   'SmartMoves',
-                        //   style: TextStyle(
-                        //     fontSize: 20,
-                        //     fontWeight: FontWeight.w800,
-                        //     color: Colors.white,
-                        //   ),
-                        // ),
-                        // SizedBox(height: 2.r),
-                        // Text(
-                        //   'BUDGET SMART. LIVE FREE.',
-                        //   style: GoogleFonts.syne(
-                        //     fontSize: 11,
-                        //     fontWeight: FontWeight.w600,
-                        //     color: Colors.white.withValues(alpha: 0.50),
-                        //     letterSpacing: 2.2,
-                        //   ),
-                        // ),
+
                         Transform.scale(
                           scaleX: 0.8,
                           scaleY: 1.2,
@@ -119,74 +110,6 @@ class SplashScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-// ── Concentric rings ──────────────────────────────────────────────────────────
-
-class _ConcentricRings extends StatelessWidget {
-  const _ConcentricRings();
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(painter: _RingsPainter());
-  }
-}
-
-class _RingsPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.07)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.0;
-
-    final center = Offset(size.width * 0.5, size.height * 0.5);
-    for (final r in [100.0, 170.0, 240.0, 310.0, 380.0]) {
-      canvas.drawCircle(center, r, paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter _) => false;
-}
-
-// ── Dot grid ──────────────────────────────────────────────────────────────────
-
-class _DotGrid extends StatelessWidget {
-  const _DotGrid();
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(size: const Size(88, 72), painter: _DotGridPainter());
-  }
-}
-
-class _DotGridPainter extends CustomPainter {
-  static const _lit = {(1, 0), (3, 0), (0, 1), (4, 2), (2, 3), (1, 2)};
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    const cols = 5;
-    const rows = 4;
-    const spacing = 16.0;
-    const dotR = 2.0;
-
-    for (var c = 0; c < cols; c++) {
-      for (var r = 0; r < rows; r++) {
-        final isLit = _lit.contains((c, r));
-        canvas.drawCircle(
-          Offset(c * spacing + spacing * 0.5, r * spacing + spacing * 0.5),
-          dotR,
-          Paint()
-            ..color = Colors.white.withValues(alpha: isLit ? 0.75 : 0.18)
-            ..style = PaintingStyle.fill,
-        );
-      }
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter _) => false;
 }
 
 // ── Loading bar ───────────────────────────────────────────────────────────────
