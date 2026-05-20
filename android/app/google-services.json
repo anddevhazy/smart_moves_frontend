@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1051924890756",
+    "project_id": "smart-moves-2120a",
+    "storage_bucket": "smart-moves-2120a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051924890756:android:3b118831c796945af9eed1",
+        "android_client_info": {
+          "package_name": "com.example.smart_moves"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8e9Z4Dsxxyt18vkDx3KuuXlZ26VTVNtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

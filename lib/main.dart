@@ -1,23 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:smart_moves/deposit.dart';
-import 'package:smart_moves/disbursement.dart';
-import 'package:smart_moves/login.dart';
+import 'package:smart_moves/features/global/core/config/environment.dart';
+import 'package:smart_moves/main_common.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'features/global/core/config/flavor_config.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() async {
+  FlavorConfig.init(
+    environment: Environment.dev,
+    baseApiUrl: 'https://smart-moves-staging-api.up.railway.app',
+  );
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const LoginScreen(),
-    );
-  }
+  await mainCommon();
 }

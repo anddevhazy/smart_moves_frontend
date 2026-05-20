@@ -1,0 +1,104 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <title>SmartMoves App Icon</title>
+  <desc>Clock face with ₦ background texture. Time triggers money — disbursement at the green coin.</desc>
+
+  <defs>
+    <clipPath id="icon-shape">
+      <rect width="1024" height="1024" rx="225"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="1024" height="1024" rx="225" fill="#0B4FD4"/>
+
+  <!-- ── ₦ BACKGROUND LAYER (13% white, clipped to icon shape) ── -->
+  <g clip-path="url(#icon-shape)" opacity="0.13">
+    <!-- left vertical bar -->
+    <rect x="195" y="112" width="133" height="800" rx="66" fill="#FFFFFF"/>
+    <!-- right vertical bar -->
+    <rect x="696" y="112" width="133" height="800" rx="66" fill="#FFFFFF"/>
+    <!-- diagonal stroke — top-left to bottom-right (primary) -->
+    <line x1="328" y1="266" x2="696" y2="758" stroke="#FFFFFF" stroke-width="133" stroke-linecap="round"/>
+    <!-- diagonal stroke — bottom-left to top-right (ghost) -->
+    <line x1="328" y1="758" x2="696" y2="266" stroke="#FFFFFF" stroke-width="133" stroke-linecap="round" opacity="0.55"/>
+    <!-- top horizontal rail -->
+    <rect x="133" y="400" width="758" height="82" rx="41" fill="#FFFFFF"/>
+    <!-- bottom horizontal rail -->
+    <rect x="133" y="542" width="758" height="82" rx="41" fill="#FFFFFF"/>
+  </g>
+
+  <!-- ── CLOCK VIGNETTE (softens ₦ behind clock face) ── -->
+  <circle cx="512" cy="497" r="277" fill="rgba(0,0,0,0.12)"/>
+
+  <!-- ── CLOCK RING ── -->
+  <circle cx="512" cy="497" r="277" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="26"/>
+
+  <!-- ── ELAPSED ARC — 12 o'clock clockwise to ~4 o'clock (~120°) ── -->
+  <path d="M512 220 A277 277 0 0 1 751.9 637.5"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="26"
+        stroke-linecap="round"/>
+
+  <!-- ── 12 HOUR TICK MARKS ── -->
+  <g stroke="rgba(255,255,255,0.22)" stroke-width="15" stroke-linecap="round">
+    <!-- 12 --> <line x1="512" y1="240" x2="512" y2="276"/>
+    <!-- 1  --> <line x1="651" y1="261" x2="635" y2="292"/>
+    <!-- 2  --> <line x1="758" y1="358" x2="732" y2="374"/>
+    <!-- 3  --> <line x1="789" y1="497" x2="758" y2="497"/>
+    <!-- 4  --> <line x1="758" y1="636" x2="732" y2="620"/>
+    <!-- 5  --> <line x1="651" y1="733" x2="635" y2="702"/>
+    <!-- 6  --> <line x1="512" y1="754" x2="512" y2="723"/>
+    <!-- 7  --> <line x1="373" y1="733" x2="389" y2="702"/>
+    <!-- 8  --> <line x1="266" y1="636" x2="292" y2="620"/>
+    <!-- 9  --> <line x1="235" y1="497" x2="266" y2="497"/>
+    <!-- 10 --> <line x1="266" y1="358" x2="292" y2="374"/>
+    <!-- 11 --> <line x1="373" y1="261" x2="389" y2="292"/>
+  </g>
+
+  <!-- ── HOUR HAND — pointing to ~10 ── -->
+  <line x1="512" y1="497"
+        x2="369" y2="349"
+        stroke="#FFFFFF"
+        stroke-width="31"
+        stroke-linecap="round"/>
+
+  <!-- ── MINUTE HAND — pointing to 12 ── -->
+  <line x1="512" y1="497"
+        x2="512" y2="261"
+        stroke="#FFFFFF"
+        stroke-width="23"
+        stroke-linecap="round"/>
+
+  <!-- ── CENTER PIVOT ── -->
+  <circle cx="512" cy="497" r="28" fill="#FFFFFF"/>
+  <circle cx="512" cy="497" r="13" fill="#0B4FD4"/>
+
+  <!-- ── COIN DROP STEM (dashed green line) ── -->
+  <line x1="752" y1="645"
+        x2="752" y2="762"
+        stroke="rgba(0,196,140,0.5)"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-dasharray="16 14"/>
+
+  <!-- ── COIN ── -->
+  <circle cx="752" cy="831" r="92" fill="#00C48C"/>
+  <!-- subtle inner ring on coin -->
+  <circle cx="752" cy="831" r="72" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="8"/>
+
+  <!-- ── ₦ INSIDE COIN ── -->
+  <!-- left vertical bar -->
+  <rect x="716" y="789" width="20" height="82" rx="10" fill="#003D2B"/>
+  <!-- right vertical bar -->
+  <rect x="796" y="789" width="20" height="82" rx="10" fill="#003D2B"/>
+  <!-- diagonal top-left → bottom-right -->
+  <line x1="736" y1="805" x2="796" y2="855" stroke="#003D2B" stroke-width="16" stroke-linecap="round"/>
+  <!-- diagonal bottom-left → top-right (ghost) -->
+  <line x1="736" y1="855" x2="796" y2="805" stroke="rgba(0,61,43,0.38)" stroke-width="16" stroke-linecap="round"/>
+  <!-- top horizontal rail -->
+  <rect x="706" y="821" width="122" height="18" rx="9" fill="#003D2B"/>
+  <!-- bottom horizontal rail -->
+  <rect x="706" y="851" width="122" height="18" rx="9" fill="#003D2B"/>
+
+</svg>
